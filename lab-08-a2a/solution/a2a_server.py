@@ -17,8 +17,10 @@ from pydantic import BaseModel
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-CLAUDE_SONNET = "us.anthropic.claude-sonnet-4-20250514"
-CLAUDE_HAIKU = "us.anthropic.claude-haiku-4-20250514"
+CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
+CLAUDE_HAIKU = "anthropic.claude-3-haiku-20240307-v1:0"
+LLAMA = "meta.llama3-8b-instruct-v1:0"
+MISTRAL = "mistral.ministral-3-3b-instruct"
 REGION = "ap-south-1"
 MODEL_ID = CLAUDE_HAIKU
 
