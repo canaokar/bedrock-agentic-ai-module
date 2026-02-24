@@ -6,7 +6,7 @@ import boto3
 
 import json
 
-CLAUDE_SONNET = "us.anthropic.claude-sonnet-4-20250514"
+CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
 REGION = "ap-south-1"
 
 _client = None
