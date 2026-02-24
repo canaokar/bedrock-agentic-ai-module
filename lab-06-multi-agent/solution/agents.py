@@ -1,0 +1,67 @@
+"""
+Lab 06: Agent class (Solution).
+"""
+
+import boto3
+
+import json
+import time
+
+CLAUDE_SONNET = "us.anthropic.claude-sonnet-4-20250514"
+CLAUDE_HAIKU = "us.anthropic.claude-haiku-4-20250514"
+REGION = "ap-south-1"
+
+
+def extract_text(message):
+    for block in message.get("content", []):
+        if "text" in block:
+            return block["text"]
+    return ""
+
+
+class Agent:
+    def __init__(self, name, model_id, system_prompt, tools=None, tool_dispatch=None):
+        self.name = name
+        self.model_id = model_id
+        self.system_prompt = system_prompt
+        self.tools = tools or []
+        self.tool_dispatch = tool_dispatch or {}
+        self.client = boto3.client("bedrock-runtime", region_name=REGION)
+
+    def run(self, prompt):
+        start = time.time()
+        print(f"  [{self.name}] Running with {self.model_id.split('.')[-1].split('-')[0]}...")
+
+        messages = [{"role": "user", "content": [{"text": prompt}]}]
+
+        while True:
+            kwargs = {
+                "modelId": self.model_id,
+                "system": [{"text": self.system_prompt}],
+                "messages": messages,
+            }
+            if self.tools:
+                kwargs["toolConfig"] = {"tools": self.tools}
+
+            response = self.client.converse(**kwargs)
+            msg = response["output"]["message"]
+            messages.append(msg)
+
+            if response["stopReason"] == "end_turn":
+                elapsed = time.time() - start
+                print(f"  [{self.name}] Done ({elapsed:.1f}s)")
+                return extract_text(msg)
+
+            if response["stopReason"] == "tool_use":
+                results = []
+                for block in msg["content"]:
+                    if "toolUse" in block:
+                        name = block["toolUse"]["name"]
+                        inp = block["toolUse"]["input"]
+                        tid = block["toolUse"]["toolUseId"]
+                        try:
+                            out = self.tool_dispatch[name](**inp)
+                        except Exception as e:
+                            out = json.dumps({"error": str(e)})
+                        results.append({"toolResult": {"toolUseId": tid, "content": [{"text": str(out)}]}})
+                messages.append({"role": "user", "content": results})

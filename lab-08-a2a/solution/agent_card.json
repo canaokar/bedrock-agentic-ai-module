@@ -1,0 +1,29 @@
+{
+  "name": "FinancialAdvisor",
+  "description": "An AI agent that provides financial information, stock analysis, and market insights.",
+  "url": "http://localhost:8000",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "skills": [
+    {
+      "id": "financial-qa",
+      "name": "Financial Q&A",
+      "description": "Answer questions about finance, stocks, markets, and investment strategies.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "market-analysis",
+      "name": "Market Analysis",
+      "description": "Provide analysis and commentary on market trends and conditions.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    }
+  ],
+  "authentication": {
+    "schemes": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "research-agent",
+  "description": "An AI agent that researches topics and provides detailed summaries with sources.",
+  "url": "http://localhost:8000",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "skills": [
+    {
+      "id": "research",
+      "name": "Topic Research",
+      "description": "Research a topic and return a structured summary with key findings.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "fact-check",
+      "name": "Fact Checking",
+      "description": "Verify claims against available knowledge and return confidence scores.",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    }
+  ]
+}

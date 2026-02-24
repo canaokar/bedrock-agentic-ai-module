@@ -1,0 +1,66 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Standard Current Account",
+    "category": "accounts",
+    "monthly_fee": 0,
+    "features": ["Debit card", "Online banking", "Mobile app", "Contactless payments"],
+    "description": "Our everyday current account with no monthly fee. Includes a Visa debit card, full online and mobile banking access."
+  },
+  {
+    "id": "prod-002",
+    "name": "Premium Current Account",
+    "category": "accounts",
+    "monthly_fee": 15.00,
+    "features": ["Travel insurance", "Mobile insurance", "Airport lounge access", "Higher ATM limits"],
+    "description": "Premium account with comprehensive insurance cover and exclusive perks. Ideal for frequent travellers."
+  },
+  {
+    "id": "prod-003",
+    "name": "Easy-Access Savings",
+    "category": "savings",
+    "monthly_fee": 0,
+    "features": ["No notice period", "Variable rate", "Unlimited withdrawals", "FSCS protected"],
+    "description": "Flexible savings account with competitive rates. Access your money whenever you need it."
+  },
+  {
+    "id": "prod-004",
+    "name": "Fixed Rate ISA",
+    "category": "savings",
+    "monthly_fee": 0,
+    "features": ["Tax-free interest", "Fixed rate guarantee", "1-5 year terms", "FSCS protected"],
+    "description": "Lock in a guaranteed rate for 1 to 5 years. Tax-free interest on savings up to the annual ISA allowance."
+  },
+  {
+    "id": "prod-005",
+    "name": "Personal Loan",
+    "category": "lending",
+    "monthly_fee": 0,
+    "features": ["Fixed monthly payments", "No early repayment fees", "Borrow 1k-25k", "1-7 year terms"],
+    "description": "Unsecured personal loan with fixed payments. Rates from 3.3% APR representative."
+  },
+  {
+    "id": "prod-006",
+    "name": "Residential Mortgage",
+    "category": "lending",
+    "monthly_fee": 0,
+    "features": ["Fixed and variable rates", "Up to 95% LTV", "Free valuation", "Dedicated adviser"],
+    "description": "Home mortgage products with competitive rates. First-time buyer and remortgage options available."
+  },
+  {
+    "id": "prod-007",
+    "name": "Cashback Credit Card",
+    "category": "cards",
+    "monthly_fee": 0,
+    "features": ["0.5% cashback", "56 days interest-free", "Contactless", "Apple/Google Pay"],
+    "description": "Earn cashback on everyday spending. No annual fee with up to 56 days interest-free on purchases."
+  },
+  {
+    "id": "prod-008",
+    "name": "Business Current Account",
+    "category": "business",
+    "monthly_fee": 8.50,
+    "features": ["Free banking for 18 months", "Business debit card", "Accounting integration", "Multi-user access"],
+    "description": "Business account with free banking for the first 18 months. Integrates with popular accounting software."
+  }
+]

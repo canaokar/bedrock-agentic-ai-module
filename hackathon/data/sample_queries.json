@@ -1,0 +1,22 @@
+[
+  {"query": "What are your opening hours?", "expected_intent": "faq", "category": "general"},
+  {"query": "I want to check my account balance", "expected_intent": "account_query", "category": "accounts"},
+  {"query": "How do I transfer money to another account?", "expected_intent": "payment_help", "category": "payments"},
+  {"query": "My card has been stolen, what do I do?", "expected_intent": "faq", "category": "urgent"},
+  {"query": "What mortgage rates do you offer?", "expected_intent": "faq", "category": "products"},
+  {"query": "I need to dispute a transaction from last week", "expected_intent": "account_query", "category": "disputes"},
+  {"query": "Can you explain the overdraft charges?", "expected_intent": "faq", "category": "fees"},
+  {"query": "Set up a standing order to pay my rent", "expected_intent": "payment_help", "category": "payments"},
+  {"query": "What is the interest rate on savings accounts?", "expected_intent": "faq", "category": "products"},
+  {"query": "I cannot log into my online banking", "expected_intent": "tech_support", "category": "access"},
+  {"query": "Show me my recent transactions", "expected_intent": "account_query", "category": "accounts"},
+  {"query": "I want to apply for a personal loan", "expected_intent": "faq", "category": "products"},
+  {"query": "Tell me a joke", "expected_intent": "out_of_scope", "category": "irrelevant"},
+  {"query": "What is the weather today?", "expected_intent": "out_of_scope", "category": "irrelevant"},
+  {"query": "How do I change my registered phone number?", "expected_intent": "account_query", "category": "settings"},
+  {"query": "Compare your credit card options", "expected_intent": "faq", "category": "products"},
+  {"query": "I was charged twice for the same purchase", "expected_intent": "account_query", "category": "disputes"},
+  {"query": "How do I close my account?", "expected_intent": "faq", "category": "general"},
+  {"query": "What is AML compliance?", "expected_intent": "faq", "category": "compliance"},
+  {"query": "Transfer 500 pounds to my savings account", "expected_intent": "payment_help", "category": "payments"}
+]

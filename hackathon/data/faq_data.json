@@ -1,0 +1,22 @@
+[
+  {"id": 1, "question": "What are your branch opening hours?", "answer": "Our branches are open Monday to Friday, 9am to 5pm. Some branches offer Saturday hours from 9am to 1pm."},
+  {"id": 2, "question": "How do I open a new account?", "answer": "You can open an account online, via our mobile app, or by visiting a branch. You will need valid photo ID and proof of address."},
+  {"id": 3, "question": "How do I report a lost or stolen card?", "answer": "Call our 24/7 helpline immediately at 0800-XXX-XXXX or use the mobile app to freeze your card instantly."},
+  {"id": 4, "question": "What is the overdraft limit?", "answer": "Overdraft limits vary based on your account type and credit assessment. Standard accounts offer up to 1,000 arranged overdraft."},
+  {"id": 5, "question": "How do I set up a standing order?", "answer": "You can set up standing orders through online banking, the mobile app, or by contacting us. You will need the recipient's sort code and account number."},
+  {"id": 6, "question": "What are the international transfer fees?", "answer": "International transfers cost between 5 and 25 depending on the destination. SEPA transfers within Europe are free for premium accounts."},
+  {"id": 7, "question": "How do I apply for a mortgage?", "answer": "Start your mortgage application online or book an appointment with a mortgage adviser. You will need 3 months of payslips and bank statements."},
+  {"id": 8, "question": "What is two-factor authentication?", "answer": "Two-factor authentication adds extra security by requiring a code from your mobile device in addition to your password when logging in."},
+  {"id": 9, "question": "How do I change my address?", "answer": "Update your address through online banking, the mobile app, or by visiting a branch with proof of your new address."},
+  {"id": 10, "question": "What savings accounts do you offer?", "answer": "We offer easy-access savings, fixed-rate ISAs, regular saver accounts, and junior ISAs. Rates vary by product."},
+  {"id": 11, "question": "How do I dispute a transaction?", "answer": "Contact us within 120 days of the transaction. You can raise a dispute through online banking or by calling customer service."},
+  {"id": 12, "question": "What is the maximum ATM withdrawal limit?", "answer": "The standard daily ATM withdrawal limit is 300. Premium account holders can withdraw up to 500 per day."},
+  {"id": 13, "question": "How do I register for online banking?", "answer": "Visit our website and click Register. You will need your account number, sort code, and the mobile number registered to your account."},
+  {"id": 14, "question": "Do you offer student accounts?", "answer": "Yes, our student account includes a 0% overdraft up to 1,500, a free railcard, and no monthly fees."},
+  {"id": 15, "question": "How do I close my account?", "answer": "You can close your account online, by phone, or in branch. Ensure all direct debits and standing orders are moved first."},
+  {"id": 16, "question": "What happens if I go over my overdraft?", "answer": "Unarranged overdraft charges apply at 15.89% EAR. We will send you alerts before charging fees."},
+  {"id": 17, "question": "How do I apply for a personal loan?", "answer": "Apply online for a decision in minutes. Loans available from 1,000 to 25,000 with rates from 3.3% APR."},
+  {"id": 18, "question": "Is my money protected?", "answer": "Yes, deposits up to 85,000 are protected by the Financial Services Compensation Scheme (FSCS)."},
+  {"id": 19, "question": "How do I set up a direct debit?", "answer": "The organisation you are paying will set up the direct debit. You just need to provide your account details and sign their mandate."},
+  {"id": 20, "question": "What are your contact channels?", "answer": "Reach us by phone (0800-XXX-XXXX), online chat, mobile app messaging, email, social media, or in branch."}
+]

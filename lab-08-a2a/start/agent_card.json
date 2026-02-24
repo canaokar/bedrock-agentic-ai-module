@@ -1,0 +1,22 @@
+{
+  "name": "TODO: Give your agent a name",
+  "description": "TODO: Describe what your agent does",
+  "url": "http://localhost:8000",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "skills": [
+    {
+      "id": "TODO: unique skill id",
+      "name": "TODO: skill name",
+      "description": "TODO: what does this skill do?",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    }
+  ],
+  "authentication": {
+    "schemes": []
+  }
+}
