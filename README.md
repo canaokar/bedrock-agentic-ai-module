@@ -124,6 +124,45 @@ mistral.voxtral-mini-3b-2507
 mistral.voxtral-small-24b-2507
 ```
 
+**Deepseek**
+```
+deepseek.v3.2
+deepseek.v3-v1:0
+```
+
+**Gemma**
+```
+google.gemma-3-4b-it
+google.gemma-3-27b-it
+google.gemma-3-12b-it
+```
+
+**OpenAI**
+```
+openai.gpt-oss-safeguard-120b
+openai.gpt-oss-120b-1:0
+openai.gpt-oss-safeguard-20b
+openai.gpt-oss-20b-1:0
+```
+
+**Minimax**
+```
+minimax.minimax-m2
+minimax.minimax-m2.1
+```
+
+**Kimi**
+```
+moonshotai.kimi-k2.5
+moonshot.kimi-k2-thinking
+```
+
+**Z.ai**
+```
+zai.glm-4.7
+zai.glm-4.7-flash
+```
+
 ---
 
 ## Lab Overview
