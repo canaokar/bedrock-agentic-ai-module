@@ -8,7 +8,7 @@ import boto3
 import json
 from tools import ALL_TOOLS, TOOL_DISPATCH
 
-CLAUDE_SONNET = "us.anthropic.claude-sonnet-4-20250514"
+CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
 REGION = "ap-south-1"
 
 SYSTEM_PROMPT = """You are a helpful assistant with access to tools.

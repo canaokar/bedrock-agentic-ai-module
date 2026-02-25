@@ -1,6 +1,57 @@
-# Hackathon: Build Your Own Multi-Agent System
+# Hackathon: Banking Receptionist Chatbot
 
-Work in teams of 3-4 to build a multi-agent system using the patterns and tools from the past two days.
+Build a **banking chatbot** with a receptionist that classifies customer intent and routes to 5 specialist sub-agents. You get a working Streamlit chat UI — your job is to build the brain behind it.
+
+---
+
+## Quick Start
+
+```bash
+# 1. Install Streamlit (if not already)
+pip install streamlit
+
+# 2. Run the chatbot
+streamlit run chatbot_ui.py
+
+# 3. It will say "I'm not set up yet" — that's expected!
+#    Open backend.py and build your receptionist system.
+```
+
+---
+
+## The Challenge
+
+Build a `handle_message()` function in **`backend.py`** that:
+
+1. **Classifies** the customer's intent using Haiku (fast, cheap)
+2. **Routes** to the right specialist sub-agent using Sonnet (quality)
+3. **Returns** a response with the intent label and confidence score
+
+### Required Sub-Agents
+
+| Sub-Agent | Handles | Data / Tools |
+|-----------|---------|--------------|
+| **FAQ** | Opening hours, card loss, general questions | `data/faq_data.json` |
+| **Account** | Balance, transactions, account settings | Mock tools (check_balance, get_transactions) |
+| **Payments** | Transfers, standing orders, direct debits | Mock tools (initiate_transfer, check_status) |
+| **Products** | Product recommendations, comparisons | `data/product_catalog.json` |
+| **Complaints** | Customer complaints, escalations | Empathetic responses, escalation logic |
+
+### Requirements
+
+- Receptionist uses **Haiku** for classification (fast/cheap)
+- Specialists use **Sonnet** for quality responses
+- At least **2 sub-agents must have tools** (not just prompt-only)
+- Handle **off-topic queries** and **low confidence** gracefully
+- Return the dict format that `chatbot_ui.py` expects: `{"response": ..., "intent": ..., "confidence": ...}`
+
+### Bonus Challenges
+
+- Add **conversation memory** (multi-turn within a specialist)
+- Add a **"transfer to human"** escalation path for complaints
+- Use **extended thinking** for complex queries
+- Serve one data source via an **MCP server**
+- Expose your chatbot as an **A2A agent** that other teams can call
 
 ---
 
@@ -8,10 +59,9 @@ Work in teams of 3-4 to build a multi-agent system using the patterns and tools 
 
 1. **Time:** 2.5 hours to build, then 5 min demo + 3 min Q&A per team
 2. **Use what you learned:** Your system must use at least 2 patterns from the labs (tool use, routing, multi-agent, MCP, etc.)
-3. **Start from building blocks:** Copy and adapt the templates in `building-blocks/` -- don't start from scratch
+3. **Start from building blocks:** Use the templates in `building-blocks/` — don't reinvent the wheel
 4. **Plug in tools:** Use pre-built tools from `tools/` or write your own
-5. **Mixed models encouraged:** Use Haiku for fast/cheap tasks, Sonnet for quality tasks
-6. **Stretch goals:** MCP integration, A2A between teams, parallel agents
+5. **Mixed models:** Use Haiku for fast/cheap tasks, Sonnet for quality tasks
 
 ---
 
@@ -100,12 +150,11 @@ Test-generator agent creates test cases from requirements, executor agent runs t
 ## Getting Started
 
 ```bash
-# 1. Pick a theme (or invent your own)
-# 2. Copy the relevant building block template
-cp building-blocks/multi_agent_template.py my_project.py
-
-# 3. Add tools you need
-# 4. Customize system prompts and agent logic
-# 5. Test with sample queries from data/sample_queries.json
-# 6. Iterate and improve!
+# 1. Open backend.py — this is YOUR file
+# 2. Look at building-blocks/receptionist_template.py for the routing pattern
+# 3. Look at building-blocks/agent_template_raw.py for tool-calling agents
+# 4. Load data from data/faq_data.json and data/product_catalog.json
+# 5. Build your classify → route → respond pipeline
+# 6. Test with: streamlit run chatbot_ui.py
+# 7. Try the sample queries from data/sample_queries.json
 ```

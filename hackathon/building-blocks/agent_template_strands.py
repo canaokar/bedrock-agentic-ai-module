@@ -40,7 +40,7 @@ def get_data(item_id: str) -> str:
 
 # --- Create the agent ---
 agent = Agent(
-    model="us.anthropic.claude-sonnet-4-20250514",
+    model="global.anthropic.claude-sonnet-4-6",
     tools=[search_knowledge, get_data],
     system_prompt="You are a helpful assistant with access to a knowledge base and data lookup tools.",
 )

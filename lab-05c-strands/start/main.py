@@ -9,7 +9,7 @@ Rebuild the agent using AWS Strands Agents SDK — minimal code with @tool decor
 #   from strands.tools import tool
 import json
 
-CLAUDE_SONNET = "us.anthropic.claude-sonnet-4-20250514"
+CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
 
 
 # --- Tool: get_weather (PROVIDED COMPLETE as reference) ---

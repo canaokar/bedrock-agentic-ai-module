@@ -7,8 +7,8 @@ import json
 import time
 from agents import Agent
 
-CLAUDE_SONNET = "us.anthropic.claude-sonnet-4-20250514"
-CLAUDE_HAIKU = "us.anthropic.claude-haiku-4-20250514"
+CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
+CLAUDE_HAIKU = "anthropic.claude-3-haiku-20240307-v1:0"
 
 # --- Mock research tools ---
 SEARCH_WEB_TOOL = {"toolSpec": {"name": "search_web", "description": "Search the web for information.", "inputSchema": {"json": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}}}}
