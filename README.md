@@ -82,6 +82,48 @@ print('Setup OK!')
 | boto3 client | `boto3.client("bedrock-runtime", region_name="ap-south-1")` |
 | Converse API | `client.converse(modelId=..., messages=..., system=..., toolConfig=...)` |
 
+### Available Model IDs
+
+**Anthropic Claude**
+```
+global.anthropic.claude-sonnet-4-6
+anthropic.claude-3-haiku-20240307-v1:0
+anthropic.claude-haiku-4-5-20251001-v1:0
+anthropic.claude-sonnet-4-5-20250929-v1:0
+anthropic.claude-sonnet-4-6
+anthropic.claude-opus-4-5-20251101-v1:0
+anthropic.claude-opus-4-6-v1
+anthropic.claude-3-sonnet-20240229-v1:0:28k
+anthropic.claude-3-sonnet-20240229-v1:0
+anthropic.claude-3-haiku-20240307-v1:0:48k
+anthropic.claude-3-haiku-20240307-v1:0
+anthropic.claude-3-5-sonnet-20240620-v1:0
+anthropic.claude-3-5-sonnet-20241022-v2:0
+anthropic.claude-3-7-sonnet-20250219-v1:0
+anthropic.claude-sonnet-4-20250514-v1:0
+```
+
+**Meta Llama**
+```
+meta.llama3-8b-instruct-v1:0
+meta.llama3-70b-instruct-v1:0
+```
+
+**Mistral**
+```
+mistral.ministral-3-3b-instruct
+mistral.ministral-3-8b-instruct
+mistral.ministral-3-14b-instruct
+mistral.mistral-7b-instruct-v0:2
+mistral.mixtral-8x7b-instruct-v0:1
+mistral.mistral-large-2402-v1:0
+mistral.mistral-large-3-675b-instruct
+mistral.magistral-small-2509
+mistral.devstral-2-123b
+mistral.voxtral-mini-3b-2507
+mistral.voxtral-small-24b-2507
+```
+
 ---
 
 ## Lab Overview
