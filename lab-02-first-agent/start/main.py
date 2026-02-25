@@ -4,9 +4,27 @@ Build a tool-using agent from scratch with the Bedrock Converse API agent loop.
 """
 
 import boto3
+import os
+from pathlib import Path
 
 import json
 from tools import ALL_TOOLS, TOOL_DISPATCH
+
+# Load .env file if it exists (so you don't have to export every time)
+for _candidate in [
+    Path(".env"),
+    Path(__file__).resolve().parent / ".env",
+    Path(__file__).resolve().parent.parent / ".env",
+    Path(__file__).resolve().parent.parent.parent / "shared" / ".env",
+]:
+    if _candidate.exists():
+        with open(_candidate) as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _key, _val = _line.split("=", 1)
+                    os.environ.setdefault(_key.strip(), _val.strip())
+        break
 
 CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
 REGION = "ap-south-1"

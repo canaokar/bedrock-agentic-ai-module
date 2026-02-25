@@ -4,6 +4,8 @@ Lab 08 - A2A Server (Solution)
 Complete A2A server with agent card, task endpoints, and Bedrock integration.
 """
 
+import os
+from pathlib import Path
 import json
 import uuid
 from datetime import datetime, timezone
@@ -13,6 +15,22 @@ import boto3
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+
+# Load .env file if it exists (so you don't have to export every time)
+for _candidate in [
+    Path(".env"),
+    Path(__file__).resolve().parent / ".env",
+    Path(__file__).resolve().parent.parent / ".env",
+    Path(__file__).resolve().parent.parent.parent / "shared" / ".env",
+]:
+    if _candidate.exists():
+        with open(_candidate) as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _key, _val = _line.split("=", 1)
+                    os.environ.setdefault(_key.strip(), _val.strip())
+        break
 
 # ---------------------------------------------------------------------------
 # Constants

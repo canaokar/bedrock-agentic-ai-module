@@ -6,11 +6,29 @@ and wires them into an Amazon Bedrock agent loop.
 """
 
 import asyncio
+import os
+from pathlib import Path
 import json
 import boto3
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
+
+# Load .env file if it exists (so you don't have to export every time)
+for _candidate in [
+    Path(".env"),
+    Path(__file__).resolve().parent / ".env",
+    Path(__file__).resolve().parent.parent / ".env",
+    Path(__file__).resolve().parent.parent.parent / "shared" / ".env",
+]:
+    if _candidate.exists():
+        with open(_candidate) as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _key, _val = _line.split("=", 1)
+                    os.environ.setdefault(_key.strip(), _val.strip())
+        break
 
 # ---------------------------------------------------------------------------
 # Constants

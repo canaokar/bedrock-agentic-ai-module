@@ -7,7 +7,25 @@ Rebuild the agent using AWS Strands Agents SDK — minimal code with @tool decor
 # Hint:
 #   from strands import Agent
 #   from strands.tools import tool
+import os
+from pathlib import Path
 import json
+
+# Load .env file if it exists (so you don't have to export every time)
+for _candidate in [
+    Path(".env"),
+    Path(__file__).resolve().parent / ".env",
+    Path(__file__).resolve().parent.parent / ".env",
+    Path(__file__).resolve().parent.parent.parent / "shared" / ".env",
+]:
+    if _candidate.exists():
+        with open(_candidate) as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _key, _val = _line.split("=", 1)
+                    os.environ.setdefault(_key.strip(), _val.strip())
+        break
 
 CLAUDE_SONNET = "global.anthropic.claude-sonnet-4-6"
 

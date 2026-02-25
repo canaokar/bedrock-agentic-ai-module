@@ -2,9 +2,27 @@
 Lab 06: Multi-Agent System (Solution)
 """
 
+import os
+from pathlib import Path
 import json
 import time
 from agents import Agent, CLAUDE_SONNET, CLAUDE_HAIKU
+
+# Load .env file if it exists (so you don't have to export every time)
+for _candidate in [
+    Path(".env"),
+    Path(__file__).resolve().parent / ".env",
+    Path(__file__).resolve().parent.parent / ".env",
+    Path(__file__).resolve().parent.parent.parent / "shared" / ".env",
+]:
+    if _candidate.exists():
+        with open(_candidate) as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _key, _val = _line.split("=", 1)
+                    os.environ.setdefault(_key.strip(), _val.strip())
+        break
 
 SEARCH_WEB_TOOL = {"toolSpec": {"name": "search_web", "description": "Search the web.", "inputSchema": {"json": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}}}}
 SEARCH_DB_TOOL = {"toolSpec": {"name": "search_database", "description": "Search internal database.", "inputSchema": {"json": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}}}}
