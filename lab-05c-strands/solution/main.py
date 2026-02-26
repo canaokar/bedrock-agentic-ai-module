@@ -5,6 +5,7 @@ Lab 05c: Strands Agent (Solution)
 """
 
 from strands import Agent
+from strands.models.bedrock import BedrockModel
 from strands.tools import tool
 import os
 from pathlib import Path
@@ -73,8 +74,13 @@ def get_time(timezone: str) -> str:
     return json.dumps({"timezone": timezone, "time": datetime.now().strftime("%H:%M:%S")})
 
 
+bedrock_model = BedrockModel(
+    model_id=CLAUDE_SONNET,
+    region_name="ap-south-1",
+)
+
 agent = Agent(
-    model=CLAUDE_SONNET,
+    model=bedrock_model,
     tools=[get_weather, search_news, get_time],
     system_prompt="You are a helpful assistant with access to tools. Use them to answer questions accurately.",
 )
